@@ -8,9 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Fachbereich AI"),
-        backgroundColor: Colors.blue[900]
-      ),
+          title: Text("Fachbereich AI"), backgroundColor: Colors.blue[900]),
       body: Container(
         child: Center(
           child: Column(
@@ -21,27 +19,66 @@ class HomeScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: RaisedButton(
-                  child: Text("Kalender"),
-                  onPressed: (){
+                child: RaisedButton.icon(
+                  label: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      "Kalender",
+                      style: TextStyle(
+                        fontSize: 24,
+                      ),
+                    ),
+                  ),
+                  color: Colors.blue[900],
+                  textColor: Colors.white,
+                  icon: Icon(Icons.calendar_today),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0)),
+                  onPressed: () {
                     navigate(context, KalenderScreen());
                   },
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: RaisedButton(
-                  child: Text("Personen"),
-                  onPressed: (){
+                child: RaisedButton.icon(
+                  label: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      "Personen",
+                      style: TextStyle(
+                        fontSize: 24,
+                      ),
+                    ),
+                  ),
+                  color: Colors.blue[900],
+                  textColor: Colors.white,
+                  icon: Icon(Icons.person_pin),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0)),
+                  onPressed: () {
                     navigate(context, PersonenScreen());
                   },
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: RaisedButton(
-                  child: Text("Raum"),
-                  onPressed: (){
+                child: RaisedButton.icon(
+                  label: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      "Raum",
+                      style: TextStyle(
+                        fontSize: 24,
+                      ),
+                    ),
+                  ),
+                  color: Colors.blue[900],
+                  textColor: Colors.white,
+                  icon: Icon(Icons.room),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0)),
+                  onPressed: () {
                     navigate(context, RaumScreen());
                   },
                 ),
@@ -51,15 +88,13 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
-    
   }
 
   void navigate(BuildContext context, widget) {
     Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => widget,
-      )
-    );
+        context,
+        MaterialPageRoute(
+          builder: (context) => widget,
+        ));
   }
 }
