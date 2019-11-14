@@ -17,9 +17,11 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 16.0),
                 child: Image.asset("assets/images/Hochschule_46.jpg"),
               ),
-              buildButton(context,"Kalender",Icons.calendar_today, KalenderScreen()),
-              buildButton(context,"Personen",Icons.person_pin, PersonenScreen()),
-              buildButton(context,"Raum",Icons.room, RaumScreen()),
+              buildButton(
+                  context, "Kalender", Icons.calendar_today, KalenderScreen()),
+              buildButton(
+                  context, "Personen", Icons.person_pin, PersonenScreen()),
+              buildButton(context, "Raum", Icons.room, RaumScreen()),
             ],
           ),
         ),
@@ -27,33 +29,35 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Padding buildButton(BuildContext context,text,icon,widget) {
-    return Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: RaisedButton.icon(
-                label: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontSize: 24,
-                    ),
-                  ),
-                ),
-                color: Colors.blue[900],
-                textColor: Colors.white,
-                icon: Icon(icon),
-                shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0)),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => widget,
-                      ));
-                },
+  Container buildButton(BuildContext context, text, icon, widget) {
+    return Container(
+      width: double.infinity,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: RaisedButton.icon(
+          label: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              text,
+              style: TextStyle(
+                fontSize: 24,
               ),
-            );
+            ),
+          ),
+          color: Colors.blue[900],
+          textColor: Colors.white,
+          icon: Icon(icon),
+          shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(30.0)),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => widget,
+                ));
+          },
+        ),
+      ),
+    );
   }
-
 }
