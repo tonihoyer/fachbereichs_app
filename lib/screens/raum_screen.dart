@@ -11,6 +11,7 @@ class _RaumScreenState extends State<RaumScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Raum"),
+        backgroundColor: Colors.blue[900],
       ),
     );
   }
