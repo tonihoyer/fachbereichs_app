@@ -33,10 +33,10 @@ class HomeScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(18.0),
         child: RaisedButton.icon(
           label: Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(15.0),
             child: Text(
               text,
               style: TextStyle(
