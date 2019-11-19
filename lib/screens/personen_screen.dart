@@ -1,3 +1,4 @@
+import 'package:fachbereichs_app/screens/person_bomsdorf_screen.dart';
 import 'package:flutter/material.dart';
 
 class PersonenScreen extends StatefulWidget {
@@ -48,7 +49,9 @@ class _PersonenScreenState extends State<PersonenScreen> {
             padding: const EdgeInsets.symmetric(vertical: 0.5, horizontal: 4.0),
             child: Card(
               child: ListTile(
-                onTap: (){},
+                onTap: (){
+                  //buildPerson(context, BomsdorfScreen()); so führt es immer zu Bomsdorf :(
+                },
                 title: Text('${person[index]}'),
                 leading: Icon(Icons.person),
               ),
@@ -57,5 +60,13 @@ class _PersonenScreenState extends State<PersonenScreen> {
           }
       ),
     );
+  }
+
+  void buildPerson(BuildContext context, widget) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => widget,
+        ));
   }
 }
